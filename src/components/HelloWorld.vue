@@ -1,24 +1,36 @@
 <template>
   <div class="hello">
+    <h1>Vue.js Calorie Counter</h1>
+    <div id="titles">
+      <span>description </span>
+      <span>calories</span>
+      <span>fat</span>
+      <span>carbs</span>
+      <span>protein</span>
+    </div>
+    
     <ul>
       <li v-for="(item, index) in listOfItems" v-bind:key="index">
-        <span>{{item.name}} |</span> <!--ovo v-bind nam treba ako vucemo neki data iz vue-a. Koji god attribut, ovo ce raditi -->
-        <span>{{item.calories}} |</span>
-        <span>{{item.carbs}} |</span>
-        <span>{{item.fat}} |</span>
-        <span>{{item.prot}} |</span>
+        <span>{{item.name}}</span> <!--ovo v-bind nam treba ako vucemo neki data iz vue-a. Koji god attribut, ovo ce raditi -->
+        <span>{{item.calories}}</span>
+        <span>{{item.carbs}}</span>
+        <span>{{item.fat}}</span>
+        <span>{{item.prot}}</span>
         &nbsp; <!-- no break space entity. Pravi mali razmak. -->
-        <button v-on:click="removeItem(index)">X</button> <!--prosledjuje se index koji je kao gore, kao parametar -->
+        <button v-on:click="removeItem(index)">X</button> 
+        <!--prosledjuje se index koji je kao gore, kao parametar -->
       </li> <!--Loop za hvatanje informacija. item je element, index je broj -->
     </ul>
-    <div>
-      <span>Total:</span>
-      <span>{{totals.totalCal}} |</span>
-      <span>{{totals.totalCarbs}} |</span>
-      <span>{{totals.totalFat}} |</span>
-      <span>{{totals.totalProt}} |</span>
+
+    <div id="totals">
+      <span>Totals:</span>
+      <span>{{totals.totalCal}}</span>
+      <span>{{totals.totalCarbs}}</span>
+      <span>{{totals.totalFat}}</span>
+      <span>{{totals.totalProt}}</span>
     </div>
-    <div>
+
+    <div id="newItem">
       <input v-bind:placeholder="placeholderValues.inputNameText" v-model="newValues.newName" type="text">
       <input v-bind:placeholder="placeholderValues.inputCalorieText" v-model="newValues.newCalories" type="number">
       <input v-bind:placeholder="placeholderValues.inputCarbsText" v-model="newValues.newCarbs" type="number">
@@ -35,11 +47,11 @@ export default {
   data: function(){
     return {
       placeholderValues:{
-        inputNameText:'Ide gas',
-        inputCalorieText:'',
-        inputCarbsText:'',
-        inputFatText:'',
-        inputProteinText:''
+        inputNameText:'Food item name',
+        inputCalorieText:'Calories',
+        inputCarbsText:'Fat',
+        inputFatText:'Carbs',
+        inputProteinText:'Protein'
         },
       newValues:{
         newName:'',
@@ -119,6 +131,126 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang='scss'>
-
+  .hello {
+    min-width:650px;
+    width:70%;
+    margin: 0 auto;
+    border:1px solid #333;
+    position: relative; //stavio sam ovde posto je tu dodata sirina (za button)
+    font-family: 'Helvetica';
+    border-radius: 10px;
+    h1{
+      background-color:rgb(70, 161, 131);
+      color: #fff;
+      margin:0;
+      padding:20px 0;
+      text-align: center;
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+    #titles {
+      text-transform: uppercase;
+      display:flex;
+      justify-content: space-between;
+      padding:10px 15px;
+      border-bottom:1px solid gray;
+      font-weight: bold;
+      span {
+        display:inline-block;
+        width:100px;
+        padding:5px 5px 5px 5px;
+        &:nth-child(1){
+          width:25%;
+        }
+      }
+    }
+    ul {
+      padding:0;
+      margin:0;
+      padding:20px;
+      li{
+        list-style-type: none;
+        margin:0;
+        padding:0;
+        display:flex;
+        justify-content: space-between;
+        display:relative;
+        padding-top:5px;
+        span {
+          display:inline-block;
+          width:100px;
+          padding:5px 0 2px 5px;
+          border-bottom: 1px solid gray;
+          &:nth-child(1){
+            width:25%;
+            
+          }
+        }
+        button {
+          position: absolute;
+          right:0;
+          color:red;
+          background-color: #fff;
+          border:none;
+          &:hover {
+            cursor: pointer;
+            color:#fff;
+            background-color: red;
+          }
+        }
+        
+      }
+    }
+    #totals {
+      display:flex;
+      justify-content: flex-end;
+      background-color:lightgray;
+      span {
+        display: inline-block;
+        padding:10px;
+        width:100px;
+        font-weight: bold;
+        font-size:20px;
+        &:nth-child(1){
+          width:25%;
+          font-weight: normal;
+        }
+      }
+    }
+    #newItem {
+      display: flex;
+      justify-content: space-between;
+      padding:20px 20px 10px;
+      input {
+        border:none;
+        border-bottom:1px solid #333;
+        width:100px;
+        padding:5px 0 5px 10px;
+        display:inline-block;
+        &:nth-child(1){
+            width:25%;
+          }
+        &:focus {
+          outline:none;
+        }
+      }
+      button {
+        position:absolute;
+        right:-22px;
+        bottom:-22px;
+        border-radius: 50%;
+        background-color: rgb(70, 161, 131);
+        width:60px;
+        height:60px;
+        color:#fff;
+        font-size:30px;
+        border:none;
+        &:hover {
+          background-color:rgb(93, 218, 176);
+          cursor:pointer;
+        }
+      }
+    }
+  }
 </style>
 
