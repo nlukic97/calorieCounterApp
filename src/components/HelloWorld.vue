@@ -152,7 +152,7 @@ export default {
       text-transform: uppercase;
       display:flex;
       justify-content: space-between;
-      padding:10px 15px;
+      padding:14px 15px;
       border-bottom:1px solid gray;
       font-weight: bold;
       span {
@@ -167,14 +167,15 @@ export default {
     ul {
       padding:0;
       margin:0;
-      padding:20px;
+      padding:20px 34px;
+      // position:relative;
       li{
         list-style-type: none;
         margin:0;
         padding:0;
         display:flex;
         justify-content: space-between;
-        display:relative;
+        position:relative;
         padding-top:5px;
         span {
           display:inline-block;
@@ -183,22 +184,22 @@ export default {
           border-bottom: 1px solid gray;
           &:nth-child(1){
             width:25%;
-            
           }
         }
         button {
           position: absolute;
-          right:0;
+          right:-32px;
+          bottom:0px;
           color:red;
-          background-color: #fff;
+          background-color: rgba(0,0,0,0);
+          font-size: 20px;
           border:none;
+          transition: 0.3s transform;
           &:hover {
             cursor: pointer;
-            color:#fff;
-            background-color: red;
+            transform: scale(1.5);
           }
         }
-        
       }
     }
     #totals {
@@ -220,7 +221,7 @@ export default {
     #newItem {
       display: flex;
       justify-content: space-between;
-      padding:20px 20px 10px;
+      padding:20px 20px 30px;
       input {
         border:none;
         border-bottom:1px solid #333;
