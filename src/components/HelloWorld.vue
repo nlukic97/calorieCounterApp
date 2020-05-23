@@ -132,7 +132,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang='scss'>
   .hello {
-    min-width:650px;
+    min-width:680px;
+    max-width:850px;
     width:70%;
     margin: 0 auto;
     border:1px solid #333;
@@ -147,6 +148,10 @@ export default {
       text-align: center;
       border-top-left-radius: inherit;
       border-top-right-radius: inherit;
+      background-image: url('../assets/cardio.svg');
+      background-size:100px;
+      background-repeat: no-repeat;
+      background-position: 15px -10px;
     }
     #titles {
       text-transform: uppercase;
@@ -168,7 +173,6 @@ export default {
       padding:0;
       margin:0;
       padding:20px 34px;
-      // position:relative;
       li{
         list-style-type: none;
         margin:0;
@@ -204,11 +208,12 @@ export default {
     }
     #totals {
       display:flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       background-color:lightgray;
+      padding:20px 24px;
       span {
         display: inline-block;
-        padding:10px;
+        padding-left: 5px;
         width:100px;
         font-weight: bold;
         font-size:20px;
