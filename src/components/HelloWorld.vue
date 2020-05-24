@@ -17,7 +17,7 @@
         <span>{{item.fat}}</span>
         <span>{{item.prot}}</span>
         &nbsp; <!-- no break space entity. Pravi mali razmak. -->
-        <button v-on:click="removeItem(index)">X</button> 
+        <button v-on:click="removeItem(index)">&#10060;</button> 
         <!--prosledjuje se index koji je kao gore, kao parametar -->
       </li> <!--Loop za hvatanje informacija. item je element, index je broj -->
     </ul>
@@ -146,8 +146,8 @@ export default {
       margin:0;
       padding:20px 0;
       text-align: center;
-      border-top-left-radius: inherit;
-      border-top-right-radius: inherit;
+      border-top-left-radius: 9px;
+      border-top-right-radius: 9px;
       background-image: url('../assets/cardio.svg');
       background-size:100px;
       background-repeat: no-repeat;
