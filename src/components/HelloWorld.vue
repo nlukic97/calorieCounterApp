@@ -117,7 +117,7 @@ export default {
         this.totals.totalCarbs = 0;
         this.totals.totalFat = 0;
         this.totals.totalProt = 0;
-      for(let i = 0; this.listOfItems.length; i++){ //kad zakomentarisem cetiri linije koda ispod, nastane beskonacan loop. Zasto?
+      for(let i = 0; i < this.listOfItems.length; i++){ //kad zakomentarisem cetiri linije koda ispod, nastane beskonacan loop. Zasto?
         // console.log(this.totals.totalCal);
         this.totals.totalCal += parseInt(this.listOfItems[i].calories); //cak i ako promenim ovde [i] u cifru, beskonacan loop.
         this.totals.totalCarbs += parseInt(this.listOfItems[i].carbs);
