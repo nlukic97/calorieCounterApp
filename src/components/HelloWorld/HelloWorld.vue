@@ -33,10 +33,10 @@
 
     <div id="newItem">
       <input placeholder="Title" v-model="newValues.name" type="text">
-      <input placeholder="Calories" v-model="newValues.calories" type="number">
-      <input placeholder="Carbs" v-model="newValues.carbs" type="number">
-      <input placeholder="Fat" v-model="newValues.fat" type="number">
-      <input placeholder="Protein" v-model="newValues.protein" type="number">
+      <input placeholder="Calories" v-model="newValues.calories" @keypress="$e=>preventChars($e)" type="number">
+      <input placeholder="Carbs" v-model="newValues.carbs" @keypress="$e=>preventChars($e)" type="number">
+      <input placeholder="Fat" v-model="newValues.fat" @keypress="$e=>preventChars($e)" type="number">
+      <input placeholder="Protein" v-model="newValues.protein" @keypress="$e=>preventChars($e)" type="number">
       <button @click="addItem">+</button>
     </div>
   </div>

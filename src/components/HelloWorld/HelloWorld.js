@@ -59,6 +59,10 @@ export default {
           this.totals.fat += parseInt(this.listOfItems[i].fat);
           this.totals.protein += parseInt(this.listOfItems[i].protein);
         }
+      },
+      // Called when updating number input to prevent users from typing 'e' or '.'
+      preventChars:function(e){
+        if(e.key === 'e' || e.key === '.') e.preventDefault()        
       }
     }
   }
