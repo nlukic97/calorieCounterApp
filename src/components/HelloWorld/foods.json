@@ -1,0 +1,23 @@
+[
+    {
+        "name":"Carrot",
+        "calories": 1000,
+        "carbs": 500,
+        "fat": 10,
+        "protein": 100
+    },
+    {
+        "name":"Beef",
+        "calories": 2000,
+        "carbs": 800,
+        "fat": 500,
+        "protein": 10
+    },
+    {
+        "name":"Onion",
+        "calories": 100,
+        "carbs": 200,
+        "fat": 210,
+        "protein": 76
+    }
+]
